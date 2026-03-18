@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIMAVO | 智能瓦楞包装与数字印刷先锋</title>
+    <title>SIMAVO | 科技赋能绿色柔印 — 智能包装领航者</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
     <style>
         :root {
-            --bg-color: #000000; /* Apple 黑 */
-            --text-color: #F5F5F7; /* Apple 灰白 */
-            --accent-color: #2997FF; /* Apple 蓝 */
-            --card-bg: #1C1C1E; /* 深色卡片 */
+            --bg-color: #000000;
+            --text-color: #F5F5F7;
+            --accent-color: #2997FF;
+            --card-bg: #1C1C1E;
             --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Noto Sans SC", sans-serif;
         }
 
@@ -24,14 +24,14 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 1. Apple 风格高斯模糊导航栏 */
+        /* 顶部高斯模糊导航栏 */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            height: 48px; /* Apple 经典的窄导航 */
+            height: 48px;
             background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(20px); /* 关键：高斯模糊 */
+            backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1000;
             display: flex;
@@ -41,14 +41,14 @@
         }
 
         nav .logo {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
+            letter-spacing: 2px;
             color: white;
             text-transform: uppercase;
         }
 
-        /* 2. Hero Section：使用 printer.jpg 作为全屏背景 */
+        /* Hero 主视觉区：使用 printer.jpg */
         .hero {
             height: 100vh;
             display: flex;
@@ -57,51 +57,50 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            /* 关键：使用生成的 printer.jpg 图片，并添加深色渐变蒙版 */
-            background-image: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%), url('printer.jpg');
+            background-image: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%), url('printer.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* 视差效果 */
+            background-attachment: fixed;
         }
 
         .hero h1 {
-            font-size: 4rem; /* 巨大标题 */
+            font-size: 4.5rem;
             font-weight: 700;
             letter-spacing: -2px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             background: linear-gradient(180deg, #fff 0%, #a1a1a1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #d2d2d7;
-            max-width: 800px;
+            max-width: 900px;
             font-weight: 400;
             margin-top: 0;
         }
 
-        /* 3. 核心板块：精致排版 */
+        /* 核心方案板块 */
         .section {
-            padding: 100px 20px;
+            padding: 120px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 700;
             letter-spacing: -1px;
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 100px;
         }
 
         .showcase {
             display: flex;
             align-items: center;
-            margin-bottom: 100px;
-            gap: 60px;
+            margin-bottom: 120px;
+            gap: 80px;
         }
 
         .showcase.reverse {
@@ -109,10 +108,10 @@
         }
 
         .showcase-image {
-            width: 50%;
-            border-radius: 20px; /* 圆角 */
+            width: 55%;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.05);
         }
 
@@ -120,78 +119,101 @@
             width: 100%;
             height: auto;
             display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .showcase-image:hover img {
+            transform: scale(1.03);
         }
 
         .showcase-content {
-            width: 50%;
+            width: 45%;
         }
 
         .showcase h3 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
+            font-size: 2.4rem;
+            margin-bottom: 20px;
             font-weight: 600;
+            color: #ffffff;
         }
 
         .showcase p {
             color: #86868b;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 300;
             line-height: 1.6;
         }
 
-        /* 4. AI 愿景板块：使用 designer_collab.jpg 作为全屏大图背景 */
+        /* 宗旨与愿景板块：使用 designer_collab.jpg */
         .ai-vision {
-            /* 关键：使用生成的设计师讨论图片，并添加深色渐变蒙版 */
-            background-image: linear-gradient(0deg, #000 0%, rgba(0,0,0,0.3) 100%), url('designer_collab.jpg');
+            position: relative;
+            background-image: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 100%), url('designer_collab.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding: 150px 20px;
+            padding: 180px 20px;
             text-align: center;
-            border-radius: 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         .ai-vision h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             letter-spacing: -1px;
+            font-weight: 700;
         }
 
         .ai-vision p {
-            color: #d2d2d7;
+            color: #f5f5f7;
             font-size: 1.4rem;
-            max-width: 700px;
+            max-width: 850px;
             margin: 0 auto;
             font-weight: 400;
+            line-height: 1.8;
+            background: rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+            padding: 30px;
+            border-radius: 20px;
         }
 
-        /* 5. 底部 */
+        /* 页脚 */
         footer {
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
             background-color: #000;
-            color: #444;
-            font-size: 0.9rem;
+            color: #6e6e73;
+            font-size: 0.95rem;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
+        .footer-logo {
+            color: #f5f5f7;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .showcase, .showcase.reverse { flex-direction: column; gap: 40px; }
+            .showcase-image, .showcase-content { width: 100%; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">SIMAVO</div>
+        <div class="logo">SIMAVO ADVANCED PACKAGING</div>
     </nav>
 
     <header class="hero">
         <h1>SIMAVO 智能包装</h1>
-        <p>重新定义瓦楞纸箱印刷的精度与效率。我们将 AI 动力带入每一张瓦楞纸。</p>
+        <p>重新定义瓦楞纸箱印刷的精度与效率。我们将 AI 动力带入每一张绿色瓦楞纸。</p>
     </header>
 
-    <section class="section" id="technology">
+    <section class="section">
         <div class="section-title">核心技术方案</div>
 
         <div class="showcase">
@@ -200,30 +222,32 @@
             </div>
             <div class="showcase-content">
                 <h3>工业级数字印刷</h3>
-                <p>采用高分辨率喷墨技术，实现无版印刷。支持可变数据，无论是大批量生产还是小批量定制，都能保持无可挑剔的色彩一致性。</p>
+                <p>采用高分辨率喷墨技术，实现无版柔性印刷。支持实时可变数据，无论是大批量生产还是小批量定制，都能保持无可挑剔的色彩一致性与绿色生产标准。</p>
             </div>
         </div>
 
         <div class="showcase reverse">
             <div class="showcase-image">
-                <img src="warehouse.jpg" alt="SIMAVO 繁忙仓储出货">
+                <img src="warehouse.jpg" alt="SIMAVO 智能物流仓储">
             </div>
             <div class="showcase-content">
                 <h3>智能运力网络</h3>
-                <p>堆叠整齐、贴有标签的成品纸箱实时上传至云端。我们的智能控制系统不仅实时监测，更优化了出货堆叠模式，极大提升运力效率，暗示着我们日复一日的高峰业务量。</p>
+                <p>堆叠整齐、贴有标签的成品纸箱实时同步云端。我们的智能系统不仅优化了出货堆叠模式，更极大提升了物流周转效率，确保业务高峰期的稳定输出。</p>
             </div>
         </div>
-
     </section>
 
     <section class="ai-vision">
         <h2>AI 驱动的包装未来</h2>
-        <p>作为行业先锋，SIMAVO 致力于利用先进的生成式 AI 技术（如 Claude Opus）优化包装设计工作流，自动化生成印刷简报，并为客户提供智能化的包装成本优化建议。这是我们申请 API 权限的核心愿景。</p>
+        <p>
+            作为行业先锋，SIMAVO 始终秉持<b>“科技赋能绿色柔印”</b>的宗旨。我们致力于利用生成式 AI 技术（如 Claude Opus）深度优化包装设计工作流，通过智能化算法减少印刷耗材冗余，实现生产全链路的节能降碳。通过自动化生成精准印刷简报与绿色成本优化建议，我们正在重新定义数字化、可持续的柔性包装新标准。
+        </p>
     </section>
 
     <footer>
+        <span class="footer-logo">SIMAVO</span>
         <p>© 2026 SIMAVO Advanced Packaging Solutions. All rights reserved.</p>
-        <p>联系我们：tech@simavo.com | https://simavo-web.vercel.app</p>
+        <p>联系方式：tech@simavo.com | 访问地址：https://simavo-web.vercel.app</p>
     </footer>
 
 </body>
