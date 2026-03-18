@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIMAVO | 智能瓦楞包装与数字印刷先锋</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+    <title>SIMAVO | 智能包装先锋，AI 驱动的数字化印刷</title>
     <style>
         :root {
-            --bg-color: #000000; /* Apple 黑 */
-            --text-color: #F5F5F7; /* Apple 灰白 */
-            --accent-color: #2997FF; /* Apple 蓝 */
-            --card-bg: #1C1C1E; /* 深色卡片 */
+            --bg-color: #000000;
+            --text-color: #F5F5F7;
+            --accent-color: #2997FF;
+            --card-bg: #1C1C1E;
             --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Noto Sans SC", sans-serif;
         }
 
@@ -24,14 +23,13 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 1. Apple 风格高斯模糊导航栏 */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            height: 48vh; /* Apple 经典的窄导航 */
+            height: 48px;
             background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(20px); /* 关键：高斯模糊 */
+            backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             z-index: 1000;
             display: flex;
@@ -48,7 +46,7 @@
             text-transform: uppercase;
         }
 
-        /* 2. Hero Section (全屏视差感) */
+        /* 1. Hero Section：背景大图 + 模糊感 */
         .hero {
             height: 100vh;
             display: flex;
@@ -57,11 +55,15 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+            /* 使用照片 1 作为繁忙背景 */
+            background-image: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 100%), url('printer.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* 视差效果 */
         }
 
         .hero h1 {
-            font-size: 4rem; /* 巨大标题 */
+            font-size: 4rem;
             font-weight: 700;
             letter-spacing: -2px;
             margin-bottom: 10px;
@@ -72,20 +74,13 @@
 
         .hero p {
             font-size: 1.5rem;
-            color: #86868b;
+            color: #d2d2d7;
             max-width: 800px;
             font-weight: 400;
             margin-top: 0;
         }
 
-        /* 模拟纸箱纹理的装饰元素 */
-        .box-icon {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            color: #444;
-        }
-
-        /* 3. 核心板块：科技描述 */
+        /* 2. 核心板块：精致排版 */
         .section {
             padding: 100px 20px;
             max-width: 1200px;
@@ -97,76 +92,81 @@
             font-weight: 700;
             letter-spacing: -1px;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+        .showcase {
+            display: flex;
+            align-items: center;
+            margin-bottom: 100px;
+            gap: 60px;
         }
 
-        .card {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 18px; /* 圆角 */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid transparent;
+        .showcase.reverse {
+            flex-direction: row-reverse;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255,255,255,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        .showcase-image {
+            width: 50%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
-        .card-icon {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
+        .showcase-image img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
-        .card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
+        .showcase-content {
+            width: 50%;
+        }
+
+        .showcase h3 {
+            font-size: 2.2rem;
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
-        .card p {
+        .showcase p {
             color: #86868b;
-            line-height: 1.6;
+            font-size: 1.2rem;
             font-weight: 300;
+            line-height: 1.6;
         }
 
-        /* 4. AI 愿景板块 (专为审核设计) */
+        /* 3. AI 愿景板块：全屏大图+文字 */
         .ai-vision {
-            background-color: #050505;
-            border-radius: 24px;
-            padding: 60px;
-            margin-top: 60px;
+            background-image: linear-gradient(0deg, #000 0%, rgba(0,0,0,0.3) 100%), url('quality_check.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 20px;
             text-align: center;
-            border: 1px solid rgba(41, 151, 255, 0.1);
+            border-radius: 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .ai-vision h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: white;
             margin-bottom: 20px;
+            letter-spacing: -1px;
         }
 
         .ai-vision p {
-            color: #86868b;
-            font-size: 1.2rem;
+            color: #d2d2d7;
+            font-size: 1.4rem;
             max-width: 700px;
             margin: 0 auto;
+            font-weight: 400;
         }
 
-        /* 5. 底部 */
         footer {
             text-align: center;
             padding: 50px 20px;
             background-color: #000;
-            border-top: 1px solid rgba(255,255,255,0.05);
             color: #444;
             font-size: 0.9rem;
         }
@@ -180,34 +180,38 @@
     </nav>
 
     <header class="hero">
-        <div class="box-icon">📦</div> <h1>SIMAVO 智能包装</h1>
-        <p>重新定义瓦楞纸箱印刷的精度与效率。我们将工业 4.0 的数字化技术带入每一张瓦楞纸。</p>
+        <h1>SIMAVO 智能包装</h1>
+        <p>重新定义瓦楞纸箱印刷的精度与效率。我们将 AI 动力带入每一张瓦楞纸。</p>
     </header>
 
     <section class="section" id="technology">
         <div class="section-title">核心技术方案</div>
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon">🖨️</div>
+
+        <div class="showcase">
+            <div class="showcase-image">
+                <img src="printer.jpg" alt="SIMAVO 高速印刷">
+            </div>
+            <div class="showcase-content">
                 <h3>工业级数字印刷</h3>
                 <p>采用高分辨率喷墨技术，实现无版印刷。支持可变数据，无论是大批量生产还是小批量定制，都能保持无可挑剔的色彩一致性。</p>
             </div>
-            <div class="card">
-                <div class="card-icon">⚡</div>
-                <h3>高频瓦楞生产线</h3>
-                <p>智能控制系统实时监测瓦楞形成过程，确保纸箱的物理强度与模切精度，适应各种复杂的电商与物流包装需求。</p>
+        </div>
+
+        <div class="showcase reverse">
+            <div class="showcase-image">
+                <img src="warehouse.jpg" alt="SIMAVO 智能仓储">
             </div>
-            <div class="card">
-                <div class="card-icon">👁️</div>
-                <h3>AI 视觉检测</h3>
-                <p>利用深度学习算法进行 100% 在线质量检测，瞬间识别印刷污点、套色偏差及纸张缺陷，保障出厂零缺陷。</p>
+            <div class="showcase-content">
+                <h3>智能运力网络</h3>
+                <p>堆叠整齐、贴有标签的成品纸箱实时上传至云端。我们的智能控制系统不仅实时监测，更优化了出货堆叠模式，极大提升运力效率，暗示着我们日复一日的高峰业务量。</p>
             </div>
         </div>
 
-        <div class="ai-vision">
-            <h2>AI 驱动的包装未来</h2>
-            <p>作为行业先锋，SIMAVO 致力于利用先进的生成式 AI 技术（如 Claude Opus）优化包装设计工作流，自动化生成印刷简报，并为客户提供智能化的包装成本优化建议。这是我们申请 API 权限的核心愿景。</p>
-        </div>
+    </section>
+
+    <section class="ai-vision">
+        <h2>AI 驱动的包装未来</h2>
+        <p>作为行业先锋，SIMAVO 致力于利用先进的生成式 AI 技术（如 Claude Opus）优化包装设计工作流，自动化生成印刷简报，并为客户提供智能化的包装成本优化建议。这是我们申请 API 权限的核心愿景。</p>
     </section>
 
     <footer>
