@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMAVO | 创新设计与视觉策略</title>
+    <style>
+        :root {
+            --primary-color: #2D3436;
+            --accent-color: #0984E3;
+            --text-light: #636E72;
+            --bg-light: #F9F9F9;
+        }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            margin: 0;
+            background-color: var(--bg-light);
+        }
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+        }
+        section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h2 {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #2D3436;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">SIMAVO</div>
+        <p class="tagline">通过前沿设计与人工智能技术，为企业打造卓越的品牌视觉与交互体验。</p>
+    </header>
+
+    <section id="about">
+        <h2>关于我们</h2>
+        <p>SIMAVO 是一家专注于设计创新与品牌数字化的工作室。我们结合传统设计美学与先进的 AI 技术（如 Claude Opus），致力于为全球客户提供高效、精准的创意解决方案。</p>
+    </section>
+
+    <section id="services">
+        <h2>我们的服务</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>品牌视觉设计</h3>
+                <p>从标志设计到完整的视觉识别系统（VI），构建独特的品牌个性。</p>
+            </div>
+            <div class="service-card">
+                <h3>UI/UX 交互设计</h3>
+                <p>以用户为中心，打造直观、美观且高效的数字化产品界面。</p>
+            </div>
+            <div class="service-card">
+                <h3>AI 驱动的创意咨询</h3>
+                <p>利用生成式 AI 技术优化设计流程，提升内容产出质量与速度。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 SIMAVO Design Studio. All rights reserved.</p>
+        <p>Contact: contact@simavo.com</p>
+    </footer>
+
+</body>
+</html>
